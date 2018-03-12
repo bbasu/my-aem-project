@@ -1,0 +1,29 @@
+# Fed Ignore Files
+.idea
+/front-end/node_modules/*
+/front-end/dist/*
+/front-end/package-lock.json
+
+# Ignore VLT files
+.vlt
+.vlt-sync.log
+.vlt-sync-config.properties
+ 
+# Ignore Quickstart launches in the source tree
+license.properties
+crx-quickstart
+ 
+# Ignore compilation results
+target
+ 
+# Ignore IDE and Operating System artifacts
+.classpath
+.metadata
+.project
+.settings
+maven-eclipse.xml
+*.iml
+*.ipr
+*.iws
+.DS_Store
+*.dir

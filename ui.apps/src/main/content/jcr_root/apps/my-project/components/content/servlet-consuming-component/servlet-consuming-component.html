@@ -1,0 +1,15 @@
+<p data-sly-test="${wcmmode.edit}" data-emptytext="[Servlet Component: Please enter the appropriate values]" class="cq-placeholder" />
+<input type="hidden" id="contentPathValueForServlet" value="${properties.contentPath}" />
+<input type="hidden" id="currentPagePath" value="${currentPage.getPath}" />
+<div data-sly-test="${properties.contentPath && properties.contentPath !='' }" ng-module="ServletResultApp" ng-controller="ServletResultController" ng-cloak>
+
+    <div> Current time fetched from Server </div>
+    <ul>
+        <li>{{resultsList['current-server-time']}}</li>
+    </ul>
+
+    <div> Child page name - child page link</div>
+    <ul ng-repeat="(key, value) in resultsList" ng-show="!$first">
+        <a ng-href="{{value}}.html" target="_blank">{{key}}</a>
+    </ul>
+</div>

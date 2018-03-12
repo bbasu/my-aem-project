@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:description="Google Map Component to mark your location on google map either using lat-long (uses JS API) or by address (Embed Map API). "
+    jcr:primaryType="cq:Component"
+    jcr:title="Google Map Location Marker"
+    componentGroup="My Project Components"/>

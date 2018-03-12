@@ -1,0 +1,7 @@
+<sly data-sly-use.cta="com.myproject.use.CTAUse"></sly>
+<p data-sly-test="${wcmmode.edit && !properties.buttonLinkLabel}" data-emptytext="[CTA: Please enter the appropriate values]" class="cq-placeholder" />
+<sly data-sly-test="${!empty}">
+    <a href="${cta.buttonLinkUrl}" title="${properties.buttonLinkToolTip}" class="btn ${properties.buttonStyle}" target="${properties.buttonLinkTarget}">
+        <i class="fa fa-icon ${properties.buttonLinkStyle}"></i>&nbsp;${properties.buttonLinkLabel}
+    </a>
+</sly>

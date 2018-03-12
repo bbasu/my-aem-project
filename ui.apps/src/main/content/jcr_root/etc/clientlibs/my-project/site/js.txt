@@ -1,0 +1,5 @@
+#base=js
+
+site.js
+servlet-consuming-angular.js
+google-map.js

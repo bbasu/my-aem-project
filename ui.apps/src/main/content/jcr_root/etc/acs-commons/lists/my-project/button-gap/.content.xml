@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/etc/designs/acs-commons"
+        cq:lastModified="{Date}2016-04-22T10:53:43.524+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/acs-commons/templates/utilities/genericlist"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Button Gap"
+        sling:resourceType="acs-commons/components/utilities/genericlist">
+        <list
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <item_0
+                jcr:primaryType="nt:unstructured"
+                jcr:title="1.5 EM"
+                sling:resourceType="acs-commons/components/utilities/genericlist/item"
+                value="em15"/>
+            <item_1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="No Gap"
+                sling:resourceType="acs-commons/components/utilities/genericlist/item"
+                value="btn-mr-0"/>
+            <item_2
+                jcr:primaryType="nt:unstructured"
+                jcr:title="20px"
+                sling:resourceType="acs-commons/components/utilities/genericlist/item"
+                value="btn-mr-20"/>
+            <item_3
+                jcr:primaryType="nt:unstructured"
+                jcr:title="40px"
+                sling:resourceType="acs-commons/components/utilities/genericlist/item"
+                value="btn-mr-40"/>
+            <item_4
+                jcr:primaryType="nt:unstructured"
+                jcr:title="60px"
+                sling:resourceType="acs-commons/components/utilities/genericlist/item"
+                value="btn-mr-60"/>
+        </list>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,41 @@
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.btn-default {
+  color: #df0523;
+  background-color: #f6f6f6;
+  border-color: #ccc;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #df0523;
+  border-color: #c6041f;
+  white-space: normal;
+}
+.fa-angle-right:before {
+  content: "\f105";
+}
+.fa-external-link-square:before {
+  content: "\f14c";
+}
+.fa-cloud-download:before {
+  content: "\f0ed";
+}
+

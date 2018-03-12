@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <_x0031_00
+        jcr:primaryType="nt:unstructured"
+        jcr:title="100%"
+        value="sws-container-width-100"/>
+    <_x0036_6-33
+        jcr:primaryType="nt:unstructured"
+        jcr:title="66%/33%"
+        value="sws-container-width-66"/>
+    <_x0033_3-66
+        jcr:primaryType="nt:unstructured"
+        jcr:title="33%/66%"
+        value="sws-container-width-33-66"/>
+    <_x0033_3-33-33
+        jcr:primaryType="nt:unstructured"
+        jcr:title="33%/33%/33%"
+        value="sws-container-width-33"/>
+</jcr:root>

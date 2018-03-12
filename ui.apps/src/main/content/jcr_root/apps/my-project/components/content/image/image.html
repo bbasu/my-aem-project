@@ -1,0 +1,30 @@
+<p data-sly-test="${wcmmode.edit && !properties.imagetype}" data-emptytext="[Image: Please enter the appropriate values]" class="cq-placeholder" />
+<sly data-sly-use.image="com.myproject.components.models.ResponsiveImageModel" />
+<div style="margin: ${properties.top @ context='styleToken'}em ${properties.right @ context='styleToken'}em ${properties.bottom @ context='styleToken'}em ${properties.left @ context='styleToken'}em" data-sly-test="${properties.imagetype == 'imagetype--responsive' || properties.imagetype == 'imagetype--adaptive'}">
+   <div data-sly-use.imageModel="image.js">
+      <!--/* Responsive image */-->
+      <a data-sly-test="${properties.imagetype == 'imagetype--responsive'}" data-sly-unwrap="${!properties.targeturl}" href="${image.targeturl @ context='html'}" target="${properties.windowSelection}" data-sly-call="${responsiveImageSection @ image=image}"></a>
+      <!--/* Adaptive image */-->
+      <a data-sly-test="${image.adaptiveImagesAuthored && properties.imagetype == 'imagetype--adaptive'}" data-sly-unwrap="${!properties.targeturl}" href="${image.targeturl @ context='html'}" target="${properties.windowSelection}" data-sly-call="${adaptiveImageSection @ image=image}"></a>
+      <div><small class="pl-5" data-sly-test="${properties.description}">${properties.description}</small></div>
+   </div>
+</div>
+<!--/* Template for responsive image section */-->
+<template data-sly-use.imageModel="image.js" data-sly-template.responsiveImageSection="${ @ image}">
+   <picture class="${properties.alignment}">
+      <source media="(min-width:1024px)" srcset="${image.resImagePath}">
+      <source media="(min-width:768px) and (max-width: 1023px)" srcset="${image.resImagePath}.transform/transformLG/image.png">
+      <source media="(min-width:320px)" srcset="${image.resImagePath}.transform/transformMD/image.png">
+      <source media="(min-width:1px)" srcset="${image.resImagePath}.transform/transformXS/image.png">
+      <img src="${image.resImagePath}" data-sly-attribute.alt="${properties.alt}" data-sly-attribute.title="${properties.title}" style="width:auto;" />
+   </picture>
+</template>
+<!--/* Template for adaptive image section */-->
+<template data-sly-use.imageModel="image.js" data-sly-template.adaptiveImageSection="${ @ image}">
+   <picture class="${properties.alignment}">
+      <source media="(min-width:1024px)" srcset="${image.adaptiveLG}">
+      <source media="(min-width:768px) and (max-width: 1023px)" srcset="${image.adaptiveMD}">
+      <source media="(min-width:320px)" srcset="${image.adaptiveXS}">
+      <img src="${image.adaptiveLG}" data-sly-attribute.alt="${properties.alt}" data-sly-attribute.title="${properties.title}" style="width:auto;" />
+   </picture>
+</template>

@@ -1,0 +1,22 @@
+<!--/*Copyright Department Of Education*/-->
+<sly data-sly-test="${(wcmmode.edit || wcmmode.design)}">
+    <p data-emptytext="Video" class="cq-placeholder"></p>
+</sly>
+
+<sly data-sly-use.video="com.myproject.components.models.VideoModel" />
+
+<sly data-sly-test="${properties.videoSource == 'dam'}" data-sly-call="${damTemplate @ video=video}"></sly>
+<sly data-sly-test="${properties.videoSource == 'youtube' || properties.videoSource == 'vimeo'}" data-sly-call="${youtubeVimeoTemplate @ video=video}"></sly>
+
+<template data-sly-template.damTemplate="${ @ video}">
+    <video width="${properties.width}" height="${properties.height}" controls>
+      <source src="${properties.damUrl @ content='uri' }">
+      Your browser does not support HTML5 video.
+    </video>
+</template>
+
+<template data-sly-template.youtubeVimeoTemplate="${ @ video}"> 
+    <iframe data-sly-test="${video.isLinkValid}" width="${properties.width}" height="${properties.height}" src="${video.videoLink @ content='uri' }" 
+        frameborder="0" allowfullscreen ></iframe>
+    <div data-sly-test="${!video.isLinkValid}">Please enter a valid link!!</div>
+</template>

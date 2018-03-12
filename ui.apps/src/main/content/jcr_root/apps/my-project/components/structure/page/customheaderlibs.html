@@ -1,0 +1,6 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.all @ categories='my-project.dependencies'}"/>
+    <sly data-sly-call="${clientlib.css @ categories='my-project.main'}"/>
+     <!--/* Load authoring related client libraries */-->
+    <sly data-sly-test="${wcmmode.preview || wcmmode.edit}" data-sly-call="${clientLib.css @ categories='my-project.authoring'}"/>
+</sly>

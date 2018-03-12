@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/my-project"/>
+    <filter root="/apps/rte-color-picker"/>
+
+    <filter root="/apps/sling/servlet/errorhandler"/>
+
+
+    <filter root="/conf/my-project" mode="merge"/>
+
+
+    <filter root="/etc/clientlibs/my-project"/>
+
+
+    <filter root="/etc/designs/my-project">
+        <include pattern="/etc/designs/my-project/component-data"/>
+        <include pattern="/etc/designs/my-project/component-data/.*"/>
+        <include pattern="/etc/designs/my-project/jcr:content"/>
+
+        <include pattern="/etc/designs/my-project/jcr:content/clientlibs"/>
+        <include pattern="/etc/designs/my-project/jcr:content/clientlibs/.*"/>
+
+    </filter>
+
+</workspaceFilter>

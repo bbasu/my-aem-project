@@ -1,0 +1,16 @@
+<p data-sly-test="${wcmmode.edit}" data-emptytext="[Google Map: Please enter the appropriate values]" class="cq-placeholder" />
+<div data-sly-use.googleMapLinks="com.myproject.use.GoogleMapUse"
+     style="width:${properties.mapWidth @ context='styleToken'};height:${properties.mapHeight @ context='styleToken'};">
+    <div id="google-map"
+         
+         data-zoom="${properties.mapZoom}" 
+         data-latitude="${properties.mapLatitude}"
+         data-longitude="${properties.mapLongitude}"
+         data-map-overlay="${properties.mapOverlay}"
+         data-marker-info="${properties.mapMarkerInfo}"
+         data-google-key="${googleMapLinks.googleApiKey}"
+         data-search-address="${properties.mapSearchAddress}"
+
+         style="width:${properties.mapWidth @ context='styleToken'};height:${properties.mapHeight @ context='styleToken'};">
+    </div>
+</div>

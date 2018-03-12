@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Image"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items
+            jcr:primaryType="nt:unstructured"
+            sling:hideChildren="[image]">
+            <tab1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Configure"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <imagetype
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".list-option-imagetype-showhide-target"
+                                defaultvalue="imagetype--responsive"
+                                fieldLabel="Type"
+                                name="./imagetype">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <none
+                                        jcr:primaryType="nt:unstructured"
+                                        text="(choose)"
+                                        value=""/>
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Responsive"
+                                        value="imagetype--responsive"/>
+                                    <adaptive
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Adaptive"
+                                        value="imagetype--adaptive"/>
+                                </items>
+                            </imagetype>
+                            <mediaResponsive
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="list-option-imagetype-showhide-target foundation-layout-util-vmargin"
+                                showhidetargetvalue="imagetype--responsive">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                        class="coral-Heading coral-Heading--4"
+                                        level="{Long}4"
+                                        text="Default options"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <file
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Image asset"
+                                                fileNameParameter="./fileName"
+                                                fileReferenceParameter="./resImagePath"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./file"
+                                                title="Upload Image Asset"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </mediaResponsive>
+                            <mediaAdaptive
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="list-option-imagetype-showhide-target foundation-layout-util-vmargin"
+                                showhidetargetvalue="imagetype--adaptive">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <heading
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/heading"
+                                        class="coral-Heading coral-Heading--4"
+                                        level="{Long}4"
+                                        text="Adaptive options"/>
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <adaptiveXS
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Mobile image"
+                                                fieldDescription="Select image to be shown on mobile. Image is required for mobile."
+                                                fileNameParameter="./adaptiveXS/fileReference"
+                                                fileReferenceParameter="./adaptiveXS/fileReference"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./adaptiveXS/file"
+                                                title="Upload Image Asset"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                            <adaptiveMD
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Tablet image"
+                                                fieldDescription="Select image to be shown on tablet. Optional for tablet, will inherit mobile crop."
+                                                fileNameParameter="./adaptiveMD/fileReference"
+                                                fileReferenceParameter="./adaptiveMD/fileReference"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./adaptiveMD/file"
+                                                title="Upload Image Asset"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                            <adaptiveLG
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Desktop image"
+                                                fieldDescription="Select image to be shown on desktop. Optional for desktop, will inherit tablet crop."
+                                                fileNameParameter="./adaptiveLG/fileReference"
+                                                fileReferenceParameter="./adaptiveLG/fileReference"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./adaptiveLG/file"
+                                                title="Upload Image Asset"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </mediaAdaptive>
+                        </items>
+                    </column>
+                </items>
+            </tab1>
+            <tab2
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Accessibility"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <alt
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldDescription="(required) Its purpose is to describe the image textually so that search engines and screen readers can understand what the image is."
+                                        fieldLabel="Alternative text"
+                                        name="./alt"
+                                        required="{Boolean}true"/>
+                                    <title
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldDescription="Title of image. Visible on hover."
+                                        fieldLabel="Title"
+                                        name="./title"/>
+                                    <description
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                        fieldDescription="Provide description that appears below the image in smaller type."
+                                        fieldLabel="Description"
+                                        name="./description"/>
+                                </items>
+                            </column>
+                        </items>
+                    </columns>
+                </items>
+            </tab2>
+            <tab3
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Spacing"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <alignment
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        defaultvalue="imagetype--responsive"
+                                        fieldLabel="Alignment"
+                                        name="./alignment">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <left
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Left"
+                                                value="left"/>
+                                            <right
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Right"
+                                                value="right"/>
+                                            <center
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Center"
+                                                value="center"/>
+                                        </items>
+                                    </alignment>
+                                    <margin-fieldset
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Image Margin"
+                                        sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <column
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <margin-top
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                        fieldDescription="Margin top"
+                                                        fieldLabel="top"
+                                                        name="./top"
+                                                        value="{Long}0"/>
+                                                    <margin-right
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                        fieldDescription="Margin right"
+                                                        fieldLabel="right"
+                                                        name="./right"
+                                                        value="{Long}0"/>
+                                                    <margin-bottom
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                        fieldDescription="Margin bottom"
+                                                        fieldLabel="bottom"
+                                                        name="./bottom"
+                                                        value="{Long}0"/>
+                                                    <margin-left
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                        fieldDescription="Margin left"
+                                                        fieldLabel="left"
+                                                        name="./left"
+                                                        value="{Long}0"/>
+                                                </items>
+                                            </column>
+                                        </items>
+                                    </margin-fieldset>
+                                </items>
+                            </column>
+                        </items>
+                    </columns>
+                </items>
+            </tab3>
+            <tab4
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Link"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <targeturl
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldLabel="Destination URL"
+                                        name="./targeturl"
+                                        rootPath="/content"/>
+                                    <windowoption
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldDescription="Select where the Destination URL should be opened"
+                                        fieldLabel="Open Link in"
+                                        name="./windowSelection">
+                                        <datasource
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                            path="/etc/acs-commons/lists/boostmobile-shop/window-option"/>
+                                    </windowoption>
+                                </items>
+                            </column>
+                        </items>
+                    </columns>
+                </items>
+            </tab4>
+        </items>
+    </content>
+</jcr:root>

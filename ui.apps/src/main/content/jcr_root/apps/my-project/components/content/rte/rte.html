@@ -1,0 +1,3 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"/>
+<div class="custom-rte"><p data-sly-test.text="${properties.text}" data-sly-unwrap="${properties.textIsRich}">${text @ context = properties.textIsRich ? 'html' : 'text'}</p></div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
